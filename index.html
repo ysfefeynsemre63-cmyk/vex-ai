@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <title>VEX AI — One Platform. Many Possibilities.</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,Arial,sans-serif;background:#080b14;color:#fff;min-height:100vh;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 0%,#172b50 0%,transparent 55%),radial-gradient(circle at 90% 65%,#24134b55,transparent 35%)}
+    a{text-decoration:none;color:inherit}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:0 25px;border-bottom:1px solid #ffffff12}
+    .logo{font-size:27px;font-weight:900;letter-spacing:2px}
+    .logo span{color:#48aaff}
+    .nav-links{display:flex;gap:30px;color:#aab4c8;font-size:14px}
+    .nav-links a:hover{color:#55baff}
+    .login{border:1px solid #398bff77;padding:11px 21px;border-radius:10px;background:#398bff15;color:#fff}
+    .hero{text-align:center;padding:100px 20px 65px}
+    .tag{display:inline-block;padding:9px 16px;border:1px solid #398bff55;border-radius:30px;background:#398bff12;color:#69baff;font-size:12px;letter-spacing:2px}
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.08;margin:28px 0 20px;font-weight:900;letter-spacing:-3px}
+    h1 span{background:linear-gradient(90deg,#45b5ff,#8170ff);-webkit-background-clip:text;color:transparent}
+    .description{max-width:620px;margin:auto;color:#9ba8bd;font-size:17px;line-height:1.8}
+    .hero-buttons{display:flex;justify-content:center;gap:14px;margin-top:32px;flex-wrap:wrap}
+    .primary,.secondary{padding:15px 25px;border-radius:11px;font-weight:700;cursor:pointer}
+    .primary{background:linear-gradient(100deg,#278cff,#6558ed);box-shadow:0 0 35px #398bff40}
+    .secondary{border:1px solid #ffffff25;background:#ffffff08}
+    .orb{width:180px;height:180px;margin:55px auto 0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a6eaff,#438bff 35%,#3422a8 70%,#090c19);box-shadow:0 0 55px #398bff88,0 0 120px #5944d955;animation:float 4s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-15px);box-shadow:0 0 75px #398bffbb,0 0 145px #5944d977}}
+    .section{max-width:1150px;margin:35px auto 100px;padding:0 25px}
+    .section-heading{text-align:center;margin-bottom:35px}
+    .section-heading h2{font-size:32px;margin-bottom:12px}
+    .section-heading p{color:#8997ad}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tool{padding:27px;border:1px solid #ffffff13;background:linear-gradient(145deg,#151d30bb,#0c1220);border-radius:17px;transition:.25s}
+    .tool:hover{transform:translateY(-6px);border-color:#439fff88;box-shadow:0 12px 40px #398bff16}
+    .tool-icon{width:45px;height:45px;border-radius:12px;background:#398bff20;display:grid;place-items:center;font-size:22px;margin-bottom:20px}
+    .tool h3{font-size:18px;margin-bottom:10px}
+    .tool p{color:#8f9bb0;font-size:14px;line-height:1.7}
+    .tool .arrow{display:block;color:#5eb6ff;margin-top:20px;font-size:13px}
+    .footer{text-align:center;padding:30px;border-top:1px solid #ffffff12;color:#68758b;font-size:13px}
+    @media(max-width:750px){.nav-links{display:none}.grid{grid-template-columns:1fr 1fr}.hero{padding-top:75px}}
+    @media(max-width:480px){.grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.description{font-size:15px}.orb{width:135px;height:135px}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#">VEX<span> AI</span></a>
+    <nav class="nav-links">
+      <a href="#tools">AI Araçları</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#premium">Premium</a>
+    </nav>
+    <a class="login" href="#login">Giriş Yap</a>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="tag">✦ THE FUTURE OF ARTIFICIAL INTELLIGENCE</div>
+      <h1>ONE PLATFORM.<br><span>MANY POSSIBILITIES.</span></h1>
+      <p class="description">Yapay zekânın gücünü tek bir platformda keşfet. Üret, öğren, geliştir ve hayal ettiğinden fazlasını gerçekleştir.</p>
+      <div class="hero-buttons">
+        <a class="primary" href="#tools">Keşfetmeye Başla ↗</a>
+        <a class="secondary" href="#premium">Premium'u Keşfet</a>
+      </div>
+      <div class="orb"></div>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="section-heading">
+        <h2>Gücünü Keşfet.</h2>
+        <p>İhtiyacın olan yapay zekâ araçları tek yerde.</p>
+      </div>
+      <div class="grid">
+        <a class="tool" href="#login"><div class="tool-icon">✧</div><h3>AI Chat</h3><p>Yapay zekâ ile sohbet et, sorularına cevap bul.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool" href="#login"><div class="tool-icon">✎</div><h3>AI Writer</h3><p>Metinler, fikirler ve profesyonel içerikler oluştur.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool" href="#login"><div class="tool-icon">⌘</div><h3>AI Code</h3><p>Kod yaz, projeler geliştir ve yazılım öğren.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool" href="#login"><div class="tool-icon">▤</div><h3>AI Study</h3><p>Ders çalış, konuları öğren ve kendini geliştir.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool" href="#login"><div class="tool-icon">▧</div><h3>AI Image</h3><p>Hayalindeki görselleri yapay zekâ ile üret.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool" href="#login"><div class="tool-icon">▱</div><h3>PDF Assistant</h3><p>PDF belgelerinle çalış ve içeriklerini incele.</p><span class="arrow">Keşfet →</span></a>
+      </div>
+    </section>
+    <section class="section" id="premium">
+      <div class="section-heading">
+        <h2>More Power. More Possibilities.</h2>
+        <p>VEX AI Premium ile daha fazlasını keşfet.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 2026 VEX AI — ONE PLATFORM. MANY POSSIBILITIES.</footer>
+</body>
+</html>
