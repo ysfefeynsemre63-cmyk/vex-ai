@@ -1,8 +1,0 @@
-{
-  "name": "vex-ai-admin-addon",
-  "private": true,
-  "type": "module",
-  "scripts": { "dev": "vercel dev" },
-  "dependencies": { "@supabase/supabase-js": "^2.49.1" },
-  "devDependencies": { "vercel": "^39.2.2" }
-}
