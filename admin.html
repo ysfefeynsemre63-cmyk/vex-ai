@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b16"><title>VEX AI — Admin</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <main class="shell">
+    <header><div><span class="eyebrow">VEX AI / CONTROL CENTER</span><h1>Admin Panel</h1></div><button id="refresh">Yenile</button></header>
+    <section class="notice" id="notice">Yönetici oturumu gereklidir. Önce ana sitede giriş yapın.</section>
+    <nav><button data-tab="dashboard" class="active">Dashboard</button><button data-tab="users">Kullanıcılar</button><button data-tab="membership">Üyelik ver</button><button data-tab="logs">İşlem geçmişi</button><button data-tab="settings">Ayarlar</button></nav>
+    <section id="dashboard" class="tab active"><div class="stats" id="stats"></div><h2>Son kayıt olanlar</h2><div id="recent" class="table-wrap"></div></section>
+    <section id="users" class="tab"><div class="toolbar"><h2>Kullanıcı yönetimi</h2><input id="search" placeholder="E-posta veya kullanıcı adı ara"></div><div id="userTable" class="table-wrap"></div></section>
+    <section id="membership" class="tab"><h2>Premium üyelik ver</h2><form id="membershipForm" class="panel"><label>Kullanıcı e-postası<input name="email" type="email" required></label><label>Süre<select name="duration"><option value="7">7 gün</option><option value="30">30 gün</option><option value="90">90 gün</option><option value="365">365 gün</option><option value="lifetime">Süresiz</option></select></label><label>Not (isteğe bağlı)<input name="note" maxlength="500"></label><button>Üyelik ver</button></form></section>
+    <section id="logs" class="tab"><h2>Yönetici işlem geçmişi</h2><div id="logTable" class="table-wrap"></div></section>
+    <section id="settings" class="tab"><h2>Sistem ayarları</h2><form id="settingsForm" class="panel"><label>Site adı<input name="site_name"></label><label>Açıklama<input name="site_description"></label><label>FREE günlük AI limiti<input name="free_limit" type="number" min="0"></label><label>PREMIUM günlük AI limiti<input name="premium_limit" type="number" min="0"></label><label class="check"><input name="maintenance_mode" type="checkbox"> Bakım modu</label><label class="check"><input name="registration_enabled" type="checkbox"> Yeni kayıtlar açık</label><button>Kaydet</button></form></section>
+  </main>
+  <script type="module" src="/admin.js"></script>
+</body></html>
