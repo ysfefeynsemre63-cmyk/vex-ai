@@ -10,21 +10,22 @@
     body{font-family:Inter,Arial,sans-serif;background:#080b14;color:#fff;min-height:100vh;overflow-x:hidden}
     body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 0%,#172b50 0%,transparent 55%),radial-gradient(circle at 90% 65%,#24134b55,transparent 35%)}
     a{text-decoration:none;color:inherit}
+    button,input{font:inherit}
     .nav{height:82px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:0 25px;border-bottom:1px solid #ffffff12}
     .logo{font-size:27px;font-weight:900;letter-spacing:2px}
     .logo span{color:#48aaff}
     .nav-links{display:flex;gap:30px;color:#aab4c8;font-size:14px}
     .nav-links a:hover{color:#55baff}
-    .login{border:1px solid #398bff77;padding:11px 21px;border-radius:10px;background:#398bff15;color:#fff}
+    .login{border:1px solid #398bff77;padding:11px 21px;border-radius:10px;background:#398bff15;color:#fff;cursor:pointer}
     .hero{text-align:center;padding:100px 20px 65px}
     .tag{display:inline-block;padding:9px 16px;border:1px solid #398bff55;border-radius:30px;background:#398bff12;color:#69baff;font-size:12px;letter-spacing:2px}
     h1{font-size:clamp(42px,7vw,76px);line-height:1.08;margin:28px 0 20px;font-weight:900;letter-spacing:-3px}
     h1 span{background:linear-gradient(90deg,#45b5ff,#8170ff);-webkit-background-clip:text;color:transparent}
     .description{max-width:620px;margin:auto;color:#9ba8bd;font-size:17px;line-height:1.8}
     .hero-buttons{display:flex;justify-content:center;gap:14px;margin-top:32px;flex-wrap:wrap}
-    .primary,.secondary{padding:15px 25px;border-radius:11px;font-weight:700;cursor:pointer}
-    .primary{background:linear-gradient(100deg,#278cff,#6558ed);box-shadow:0 0 35px #398bff40}
-    .secondary{border:1px solid #ffffff25;background:#ffffff08}
+    .primary,.secondary{padding:15px 25px;border-radius:11px;font-weight:700;cursor:pointer;display:inline-block}
+    .primary{background:linear-gradient(100deg,#278cff,#6558ed);box-shadow:0 0 35px #398bff40;border:0;color:white}
+    .secondary{border:1px solid #ffffff25;background:#ffffff08;color:white}
     .orb{width:180px;height:180px;margin:55px auto 0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a6eaff,#438bff 35%,#3422a8 70%,#090c19);box-shadow:0 0 55px #398bff88,0 0 120px #5944d955;animation:float 4s ease-in-out infinite}
     @keyframes float{50%{transform:translateY(-15px);box-shadow:0 0 75px #398bffbb,0 0 145px #5944d977}}
     .section{max-width:1150px;margin:35px auto 100px;padding:0 25px}
@@ -32,15 +33,34 @@
     .section-heading h2{font-size:32px;margin-bottom:12px}
     .section-heading p{color:#8997ad}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .tool{padding:27px;border:1px solid #ffffff13;background:linear-gradient(145deg,#151d30bb,#0c1220);border-radius:17px;transition:.25s}
+    .tool{padding:27px;border:1px solid #ffffff13;background:linear-gradient(145deg,#151d30bb,#0c1220);border-radius:17px;transition:.25s;cursor:pointer}
     .tool:hover{transform:translateY(-6px);border-color:#439fff88;box-shadow:0 12px 40px #398bff16}
     .tool-icon{width:45px;height:45px;border-radius:12px;background:#398bff20;display:grid;place-items:center;font-size:22px;margin-bottom:20px}
     .tool h3{font-size:18px;margin-bottom:10px}
     .tool p{color:#8f9bb0;font-size:14px;line-height:1.7}
     .tool .arrow{display:block;color:#5eb6ff;margin-top:20px;font-size:13px}
     .footer{text-align:center;padding:30px;border-top:1px solid #ffffff12;color:#68758b;font-size:13px}
+    .modal-backdrop{position:fixed;inset:0;background:#020611cc;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:18px;z-index:1000}
+    .modal-backdrop.open{display:flex}
+    .auth-card{width:100%;max-width:430px;background:#101a2d;border:1px solid #ffffff20;border-radius:20px;padding:28px;box-shadow:0 25px 90px #0009;position:relative}
+    .close-modal{position:absolute;right:17px;top:14px;background:transparent;border:0;color:#aab8cf;font-size:26px;cursor:pointer}
+    .auth-card h2{font-size:25px;margin:4px 0 8px}
+    .auth-subtitle{color:#91a0b8;font-size:14px;line-height:1.6;margin-bottom:22px}
+    .auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#080f1d;padding:5px;border-radius:11px;margin-bottom:20px}
+    .auth-tab{border:0;border-radius:8px;padding:10px;background:transparent;color:#9eacc2;cursor:pointer}
+    .auth-tab.active{background:#1c75d2;color:#fff}
+    .field{display:block;color:#cbd6e8;font-size:13px;margin:14px 0 7px}
+    .auth-input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid #2a3a56;background:#080f1d;color:white;outline:none}
+    .auth-input:focus{border-color:#399cff;box-shadow:0 0 0 3px #398bff20}
+    .auth-submit{width:100%;padding:13px;border:0;border-radius:10px;margin-top:20px;background:linear-gradient(100deg,#278cff,#6558ed);color:white;font-weight:800;cursor:pointer}
+    .auth-submit:disabled{opacity:.6;cursor:wait}
+    .auth-message{display:none;margin-top:15px;padding:12px;border-radius:9px;font-size:13px;line-height:1.5;background:#1b2b43;color:#d7e8ff}
+    .auth-message.show{display:block}
+    .auth-message.error{background:#451f2b;color:#ffdce2}
+    .auth-message.success{background:#153b32;color:#d5fff0}
+    .auth-note{font-size:11px;color:#7f8da4;line-height:1.5;margin-top:15px}
     @media(max-width:750px){.nav-links{display:none}.grid{grid-template-columns:1fr 1fr}.hero{padding-top:75px}}
-    @media(max-width:480px){.grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.description{font-size:15px}.orb{width:135px;height:135px}}
+    @media(max-width:480px){.grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.description{font-size:15px}.orb{width:135px;height:135px}.auth-card{padding:23px}}
   </style>
 </head>
 <body>
@@ -51,7 +71,7 @@
       <a href="#about">Hakkımızda</a>
       <a href="#premium">Premium</a>
     </nav>
-    <a class="login" href="#login">Giriş Yap</a>
+    <button class="login" type="button" data-auth-open>Giriş Yap</button>
   </header>
 
   <main>
@@ -72,12 +92,12 @@
         <p>İhtiyacın olan yapay zekâ araçları tek yerde.</p>
       </div>
       <div class="grid">
-        <a class="tool" href="#login"><div class="tool-icon">✧</div><h3>AI Chat</h3><p>Yapay zekâ ile sohbet et, sorularına cevap bul.</p><span class="arrow">Keşfet →</span></a>
-        <a class="tool" href="#login"><div class="tool-icon">✎</div><h3>AI Writer</h3><p>Metinler, fikirler ve profesyonel içerikler oluştur.</p><span class="arrow">Keşfet →</span></a>
-        <a class="tool" href="#login"><div class="tool-icon">⌘</div><h3>AI Code</h3><p>Kod yaz, projeler geliştir ve yazılım öğren.</p><span class="arrow">Keşfet →</span></a>
-        <a class="tool" href="#login"><div class="tool-icon">▤</div><h3>AI Study</h3><p>Ders çalış, konuları öğren ve kendini geliştir.</p><span class="arrow">Keşfet →</span></a>
-        <a class="tool" href="#login"><div class="tool-icon">▧</div><h3>AI Image</h3><p>Hayalindeki görselleri yapay zekâ ile üret.</p><span class="arrow">Keşfet →</span></a>
-        <a class="tool" href="#login"><div class="tool-icon">▱</div><h3>PDF Assistant</h3><p>PDF belgelerinle çalış ve içeriklerini incele.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool auth-required" href="#"><div class="tool-icon">✧</div><h3>AI Chat</h3><p>Yapay zekâ ile sohbet et, sorularına cevap bul.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool auth-required" href="#"><div class="tool-icon">✎</div><h3>AI Writer</h3><p>Metinler, fikirler ve profesyonel içerikler oluştur.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool auth-required" href="#"><div class="tool-icon">⌘</div><h3>AI Code</h3><p>Kod yaz, projeler geliştir ve yazılım öğren.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool auth-required" href="#"><div class="tool-icon">▤</div><h3>AI Study</h3><p>Ders çalış, konuları öğren ve kendini geliştir.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool auth-required" href="#"><div class="tool-icon">▧</div><h3>AI Image</h3><p>Hayalindeki görselleri yapay zekâ ile üret.</p><span class="arrow">Keşfet →</span></a>
+        <a class="tool auth-required" href="#"><div class="tool-icon">▱</div><h3>PDF Assistant</h3><p>PDF belgelerinle çalış ve içeriklerini incele.</p><span class="arrow">Keşfet →</span></a>
       </div>
     </section>
     <section class="section" id="premium">
@@ -89,5 +109,153 @@
   </main>
 
   <footer class="footer">© 2026 VEX AI — ONE PLATFORM. MANY POSSIBILITIES.</footer>
+
+  <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="auth-card">
+      <button class="close-modal" type="button" id="closeAuth" aria-label="Kapat">×</button>
+      <h2 id="authTitle">VEX AI hesabına giriş yap</h2>
+      <p class="auth-subtitle">Devam etmek için e-posta adresini ve parolanı kullan.</p>
+      <div class="auth-tabs">
+        <button class="auth-tab active" type="button" id="loginTab">Giriş Yap</button>
+        <button class="auth-tab" type="button" id="signupTab">Kayıt Ol</button>
+      </div>
+      <form id="authForm">
+        <label class="field" for="authEmail">E-posta adresi</label>
+        <input class="auth-input" id="authEmail" type="email" autocomplete="email" placeholder="ornek@email.com" required>
+        <label class="field" for="authPassword">Parola</label>
+        <input class="auth-input" id="authPassword" type="password" autocomplete="current-password" placeholder="En az 6 karakter" minlength="6" required>
+        <button class="auth-submit" id="authSubmit" type="submit">Giriş Yap</button>
+      </form>
+      <div class="auth-message" id="authMessage" role="status"></div>
+      <p class="auth-note">Bu form Supabase Auth kullanır. Yalnızca Project URL ve Publishable key tarayıcıda kullanılır; Service Role / Secret key buraya kesinlikle yazılmaz.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Supabase Dashboard > Project Settings > API bölümündeki değerlerle değiştir.
+    // Buraya yalnızca Project URL ve Publishable (anon) key yazılır.
+    const SUPABASE_URL = "BURAYA_SUPABASE_PROJECT_URL";
+    const SUPABASE_ANON_KEY = "BURAYA_SUPABASE_PUBLISHABLE_KEY";
+
+    const modal = document.getElementById("authModal");
+    const form = document.getElementById("authForm");
+    const emailInput = document.getElementById("authEmail");
+    const passwordInput = document.getElementById("authPassword");
+    const submitButton = document.getElementById("authSubmit");
+    const messageBox = document.getElementById("authMessage");
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+    let authMode = "login";
+    let supabaseClient = null;
+
+    function showMessage(message, type) {
+      messageBox.textContent = message;
+      messageBox.className = "auth-message show" + (type ? " " + type : "");
+    }
+    function clearMessage() {
+      messageBox.textContent = "";
+      messageBox.className = "auth-message";
+    }
+    function openAuth() {
+      modal.classList.add("open");
+      clearMessage();
+    }
+    function closeAuth() {
+      modal.classList.remove("open");
+    }
+    function setMode(mode) {
+      authMode = mode;
+      loginTab.classList.toggle("active", mode === "login");
+      signupTab.classList.toggle("active", mode === "signup");
+      submitButton.textContent = mode === "login" ? "Giriş Yap" : "Hesap Oluştur";
+      document.getElementById("authTitle").textContent = mode === "login" ? "VEX AI hesabına giriş yap" : "VEX AI hesabını oluştur";
+      passwordInput.autocomplete = mode === "login" ? "current-password" : "new-password";
+      clearMessage();
+    }
+
+    document.querySelectorAll("[data-auth-open], .auth-required").forEach(el => {
+      el.addEventListener("click", event => {
+        if (el.classList.contains("auth-required")) event.preventDefault();
+        openAuth();
+      });
+    });
+    document.getElementById("closeAuth").addEventListener("click", closeAuth);
+    modal.addEventListener("click", event => { if (event.target === modal) closeAuth(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeAuth(); });
+    loginTab.addEventListener("click", () => setMode("login"));
+    signupTab.addEventListener("click", () => setMode("signup"));
+
+    function initSupabase() {
+      if (!window.supabase || !window.supabase.createClient) {
+        throw new Error("Supabase kütüphanesi yüklenemedi. Sayfayı yenileyip tekrar dene.");
+      }
+      if (SUPABASE_URL.includes("BURAYA_") || SUPABASE_ANON_KEY.includes("BURAYA_")) {
+        throw new Error("Supabase ayarları henüz girilmemiş. index.html içindeki Project URL ve Publishable key alanlarını doldur.");
+      }
+      if (!supabaseClient) {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      }
+      return supabaseClient;
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      clearMessage();
+      submitButton.disabled = true;
+      submitButton.textContent = "İşleniyor...";
+      try {
+        const client = initSupabase();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (authMode === "signup") {
+          const { data, error } = await client.auth.signUp({
+            email,
+            password,
+            options: { emailRedirectTo: window.location.origin }
+          });
+          if (error) throw error;
+          if (data.session && data.session.access_token) {
+            localStorage.setItem("vex_access_token", data.session.access_token);
+            showMessage("Hesabın oluşturuldu ve giriş yaptın. Admin panelini açabilirsin.", "success");
+          } else {
+            showMessage("Kayıt başarılı. E-posta adresine gelen doğrulama bağlantısına tıkla. Sonra buraya dönüp giriş yap.", "success");
+          }
+        } else {
+          const { data, error } = await client.auth.signInWithPassword({ email, password });
+          if (error) throw error;
+          if (!data.session || !data.session.access_token) throw new Error("Giriş tamamlandı ancak oturum anahtarı alınamadı. Tekrar dene.");
+          localStorage.setItem("vex_access_token", data.session.access_token);
+          showMessage("Giriş başarılı! Yönetim paneline geçebilirsin.", "success");
+          submitButton.textContent = "Giriş Başarılı";
+          setTimeout(() => { closeAuth(); }, 1300);
+        }
+      } catch (error) {
+        showMessage(error.message || "Bir hata oluştu. Bilgilerini kontrol edip tekrar dene.", "error");
+      } finally {
+        submitButton.disabled = false;
+        if (!messageBox.classList.contains("success")) {
+          submitButton.textContent = authMode === "login" ? "Giriş Yap" : "Hesap Oluştur";
+        }
+      }
+    });
+
+    // Supabase oturumu yenilendiğinde admin eklentisinin beklediği anahtarı güncel tut.
+    try {
+      const client = initSupabase();
+      client.auth.getSession().then(({ data }) => {
+        const token = data && data.session && data.session.access_token;
+        if (token) localStorage.setItem("vex_access_token", token);
+      }).catch(() => {});
+      client.auth.onAuthStateChange((_event, session) => {
+        if (session && session.access_token) localStorage.setItem("vex_access_token", session.access_token);
+        else localStorage.removeItem("vex_access_token");
+      });
+    } catch (error) {
+      // Ayarlar girilene kadar sayfa normal açılır; hata giriş penceresinde gösterilir.
+      console.warn(error.message);
+    }
+  </script>
 </body>
 </html>
